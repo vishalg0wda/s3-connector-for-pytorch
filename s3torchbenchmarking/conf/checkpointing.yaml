@@ -12,4 +12,5 @@ hydra:
   mode: MULTIRUN
   sweeper:
     params:
-      checkpoint: disk, s3
+#      checkpoint: disk, s3
+      checkpoint: s3_mountpoint

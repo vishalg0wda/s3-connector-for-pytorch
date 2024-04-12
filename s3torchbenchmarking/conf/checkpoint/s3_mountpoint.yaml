@@ -1,0 +1,4 @@
+save_one_in: 5
+destination: s3
+mountpoint_path: ???
+region: us-east-1

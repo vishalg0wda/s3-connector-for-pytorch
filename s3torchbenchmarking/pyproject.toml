@@ -23,9 +23,10 @@ dependencies = [
     "prefixed",
     "click",
     "omegaconf",
+    "pandas"
 ]
 optional-dependencies = { test = ["pytest"] }
-scripts = { s3torch-benchmark = "s3torchbenchmarking.benchmark:run_experiment", s3torch-datagen = "s3torchbenchmarking.datagen:synthesize_dataset" }
+scripts = { s3torch-benchmark = "s3torchbenchmarking.new_cli:run_experiment", s3torch-datagen = "s3torchbenchmarking.datagen:synthesize_dataset" }
 
 [tool.setuptools.packages]
 # Pure Python packages/modules and configuration files

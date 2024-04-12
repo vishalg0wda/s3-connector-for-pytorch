@@ -20,7 +20,7 @@ from torchdata.datapipes.utils import StreamWrapper
 from s3torchconnector import S3IterableDataset, S3Reader, S3MapDataset
 from s3torchconnector._s3dataset_common import parse_s3_uri
 from .benchmark_utils import ExperimentResult, ExperimentResultJsonEncoder
-from .models import Entitlement, ViT, ModelInterface
+from .models_old import Entitlement, ViT, ModelInterface
 
 
 @hydra.main(version_base=None)
@@ -191,3 +191,17 @@ def tar_to_tuple(s3object: S3Reader):
 
 if __name__ == "__main__":
     run_experiment()
+    # import torchdata.datapipes as dp
+    #
+    # m = Monitor(sensors=[
+    #     CPUUtilSensor(),
+    #     CPUMemorySensor()
+    # ])
+    # # bm = DummyBenchmark(monitor=m)
+    # input_iter = [(e, e) for e in range(1 << 10)]
+    # dataset = dp.iter.IterableWrapper(input_iter).sharding_filter()
+    # scenario = DataLoadingScenario(dataloader=DataLoader(dataset=dataset, num_workers=8, batch_size=128),
+    #                                epochs=10)
+    # bm = BenchmarkRunner(m)
+    # result: BenchmarkResult = bm.run(scenario)
+    # print(result.to_json())

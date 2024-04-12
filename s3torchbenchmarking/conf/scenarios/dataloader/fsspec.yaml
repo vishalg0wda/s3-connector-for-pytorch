@@ -1,0 +1,3 @@
+kind: fsspec
+batch_size: ???
+num_workers: ???

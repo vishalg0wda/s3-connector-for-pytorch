@@ -1,0 +1,15 @@
+defaults:
+  - dataset: unsharded_dataset
+  - dataloader: ???
+
+epochs: 1
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+#      dataloader: s3iterabledataset, fsspec
+      dataloader: s3iterabledataset
+#      dataloader.num_workers: 2,4,8,16
+      dataloader.num_workers: 8
+      dataloader.batch_size: 128
